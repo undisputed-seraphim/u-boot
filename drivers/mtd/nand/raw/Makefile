@@ -77,6 +77,7 @@ obj-$(CONFIG_NAND_STM32_FMC2) += stm32_fmc2_nand.o
 obj-$(CONFIG_CORTINA_NAND) += cortina_nand.o
 obj-$(CONFIG_ROCKCHIP_NAND) += rockchip_nfc.o
 obj-$(CONFIG_NAND_MT7621) += mt7621_nand.o
+obj-$(CONFIG_NAND_RTL8198C) += rtl8198c_nand.o
 
 else  # minimal SPL drivers
 

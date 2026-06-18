@@ -88,6 +88,22 @@ config ARCH_MTMIPS
 	select SUPPORT_LITTLE_ENDIAN
 	select SUPPORT_SPL
 
+config ARCH_RTL8198C
+	bool "Support Realtek RTL8198C platforms"
+	select HAS_FIXED_TIMER_FREQUENCY
+	select CLK
+	select DISPLAY_CPUINFO
+	select DM
+	select DM_SERIAL
+	select OF_CONTROL
+	select ROM_EXCEPTION_VECTORS
+	select SUPPORT_SPL
+	select MIPS_TUNE_24KC
+	select SUPPORTS_CPU_MIPS32_R1
+	select SUPPORTS_CPU_MIPS32_R2
+	select SYSRESET
+	select SYSRESET_WATCHDOG
+
 config ARCH_JZ47XX
 	bool "Support Ingenic JZ47xx"
 	select SUPPORT_SPL
@@ -202,6 +218,7 @@ source "arch/mips/mach-bmips/Kconfig"
 source "arch/mips/mach-jz47xx/Kconfig"
 source "arch/mips/mach-pic32/Kconfig"
 source "arch/mips/mach-mtmips/Kconfig"
+source "arch/mips/mach-rtl8198c/Kconfig"
 source "arch/mips/mach-octeon/Kconfig"
 
 if MIPS

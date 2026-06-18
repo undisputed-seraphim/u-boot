@@ -34,7 +34,7 @@ struct arch_global_data {
 #ifdef CONFIG_MIPS_L2_CACHE
 	unsigned short l2_line_size;
 #endif
-#ifdef CONFIG_ARCH_MTMIPS
+#if defined(CONFIG_ARCH_MTMIPS) || defined(CONFIG_ARCH_RTL8198C)
 	unsigned long timer_freq;
 #endif
 #ifdef CONFIG_ARCH_OCTEON

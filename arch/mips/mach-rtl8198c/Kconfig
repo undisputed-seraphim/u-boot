@@ -1,0 +1,79 @@
+# SPDX-License-Identifier: GPL-2.0
+
+if ARCH_RTL8198C
+
+config SYS_MALLOC_F_LEN
+	default 0x1000
+
+config SYS_SOC
+	default "rtl8198c"
+
+config SYS_DCACHE_SIZE
+	default 32768
+
+config SYS_DCACHE_LINE_SIZE
+	default 32
+
+config SYS_ICACHE_SIZE
+	default 65536
+
+config SYS_ICACHE_LINE_SIZE
+	default 32
+
+config SYS_SCACHE_LINE_SIZE
+	default 32
+
+config TEXT_BASE
+	default 0x80c00000
+
+config SPL_TEXT_BASE
+	default 0x80100000
+
+config BUILD_TARGET
+	default "u-boot.bin"
+
+config MAX_MEM_SIZE
+	int
+	default 256
+
+choice
+	prompt "Realtek RTL8198C SoC select"
+
+config SOC_RTL8198C
+	bool "RTL8198C"
+	select MIPS_CM
+	select MIPS_L2_CACHE
+	select SYS_CACHE_SHIFT_5
+	select SYS_MIPS_CACHE_INIT_RAM_LOAD
+	select SUPPORT_SPL
+	select SPL_LOADER_SUPPORT if SPL
+	help
+	  This supports the Realtek RTL8198C SoC with MIPS 1074Kc
+	  dual-core CPU, DDR3 memory controller, parallel NAND
+	  flash controller, and integrated gigabit switch.
+endchoice
+
+menu "Board select"
+
+config BOARD_AP5100W
+	bool "Askey AP5100W "
+	depends on SOC_RTL8198C
+	help
+	  Askey AP5100W smart plug with RTL8198C SoC,
+	  256 MiB DDR3, 128 MiB parallel NAND, dual-band WiFi.
+
+endmenu
+
+config SYS_CONFIG_NAME
+	default "ap5100w" if BOARD_AP5100W
+
+config SYS_BOARD
+	string "Board name"
+	default "ap5100w" if BOARD_AP5100W
+
+config SYS_VENDOR
+	default "realtek" if BOARD_AP5100W
+
+source "board/realtek/ap5100w/Kconfig"
+
+endif

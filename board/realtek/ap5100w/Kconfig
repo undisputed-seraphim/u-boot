@@ -1,0 +1,10 @@
+# SPDX-License-Identifier: GPL-2.0
+
+if BOARD_AP5100W
+
+config BOARD_SPECIFIC_OPTIONS
+	def_bool y
+	select SUPPORT_SPL
+	imply CMD_POWEROFF
+
+endif

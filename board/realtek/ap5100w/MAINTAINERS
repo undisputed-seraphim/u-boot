@@ -1,0 +1,6 @@
+AP5100W BOARD
+M:	Tan Li Boon <undisputed.seraphim@gmail.com>
+S:	Maintained
+F:	board/realtek/ap5100w/
+F:	include/configs/ap5100w.h
+F:	configs/ap5100w_nand_defconfig

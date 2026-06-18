@@ -651,6 +651,16 @@ config NAND_MT7621
 	  The controller supports 4~12 bits correction per 512 bytes with a
 	  maximum 4KB page size.
 
+config NAND_RTL8198C
+	bool "Support for Realtek RTL8198C NAND flash controller"
+	depends on ARCH_RTL8198C
+	select SYS_NAND_SELF_INIT
+	imply CMD_NAND
+	help
+	  This enables NAND driver for the legacy parallel NAND flash
+	  controller on the Realtek RTL8198C SoC.  Hardware BCH-4 ECC
+	  per 512-byte sector via DMA descriptor engine.
+
 comment "Generic NAND options"
 
 config SYS_NAND_BLOCK_SIZE

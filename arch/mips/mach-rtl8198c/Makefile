@@ -1,0 +1,8 @@
+# SPDX-License-Identifier: GPL-2.0
+
+obj-y += init.o
+obj-y += serial.o
+
+ifdef CONFIG_XPL_BUILD
+obj-y += spl/
+endif
