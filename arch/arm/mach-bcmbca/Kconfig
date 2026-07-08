@@ -62,6 +62,16 @@ config BCM63178
 	select DM_SERIAL
 	select PL01X_SERIAL
 
+config BCM6750
+	bool "Support for Broadcom 6750 Family"
+	select SYS_ARCH_TIMER
+	select CPU_V7A
+	select DM_SERIAL
+	select PL01X_SERIAL
+	help
+	  Broadcom BCM6750 is a triple core Cortex A7 based WiFi router SoC.
+	  This SoC is architecturally identical to BCM63178 minus DSL/TR-069/TMS.
+
 config BCM6756
 	bool "Support for Broadcom 6756 Family"
 	select SYS_ARCH_TIMER
@@ -128,6 +138,7 @@ source "arch/arm/mach-bcmbca/bcm63146/Kconfig"
 source "arch/arm/mach-bcmbca/bcm63148/Kconfig"
 source "arch/arm/mach-bcmbca/bcm63158/Kconfig"
 source "arch/arm/mach-bcmbca/bcm63178/Kconfig"
+source "arch/arm/mach-bcmbca/bcm6750/Kconfig"
 source "arch/arm/mach-bcmbca/bcm6756/Kconfig"
 source "arch/arm/mach-bcmbca/bcm6813/Kconfig"
 source "arch/arm/mach-bcmbca/bcm6846/Kconfig"

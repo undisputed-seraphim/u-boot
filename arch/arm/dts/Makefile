@@ -1026,6 +1026,8 @@ dtb-$(CONFIG_BCM63158) += \
 	bcm963158.dtb
 dtb-$(CONFIG_BCM63178) += \
 	bcm963178.dtb
+dtb-$(CONFIG_BCM6750) += \
+	bcm6750-arcadyan-wg660242-st.dtb
 dtb-$(CONFIG_BCM6756) += \
 	bcm96756.dtb
 dtb-$(CONFIG_BCM6813) += \

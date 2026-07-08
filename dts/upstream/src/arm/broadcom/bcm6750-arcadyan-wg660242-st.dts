@@ -1,0 +1,44 @@
+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+/*
+ * Copyright 2025 OpenWrt Contributors
+ */
+
+/dts-v1/;
+
+#include "bcm63178.dtsi"
+
+/ {
+	model = "Arcadyan WG660242-ST";
+	compatible = "arcadyan,wg660242-st", "brcm,bcm6750", "brcm,bcmbca";
+
+	aliases {
+		serial0 = &uart0;
+	};
+
+	chosen {
+		stdout-path = "serial0:115200n8";
+	};
+
+	memory@0 {
+		device_type = "memory";
+		reg = <0x0 0x20000000>;
+	};
+};
+
+&uart0 {
+	status = "okay";
+};
+
+&nand_controller {
+	brcm,wp-not-connected;
+	status = "okay";
+};
+
+&nandcs {
+	nand-on-flash-bbt;
+	brcm,nand-ecc-use-strap;
+};
+
+&hsspi {
+	status = "okay";
+};

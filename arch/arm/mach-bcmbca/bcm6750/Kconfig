@@ -1,0 +1,18 @@
+# SPDX-License-Identifier: GPL-2.0+
+#
+# (C) Copyright 2025 OpenWrt Contributors
+#
+
+if BCM6750
+
+config TARGET_BCM96750_ARC_WG660242
+	bool "Arcadyan WG660242-ST (BCM6750)"
+	depends on ARCH_BCMBCA
+	imply OF_UPSTREAM
+
+config SYS_SOC
+	default "bcm6750"
+
+source "board/broadcom/bcmbca/Kconfig"
+
+endif
